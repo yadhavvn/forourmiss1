@@ -9,8 +9,8 @@
 
 body{
   margin:0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#ffecd2,#fcb69f);
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#ffecd2,#fcb69f);
   height:100vh;
   display:flex;
   justify-content:center;
@@ -19,20 +19,17 @@ body{
   overflow:hidden;
 }
 
-/* Center container */
 .container{
   width:90%;
-  max-width:350px;
+  max-width:380px;
 }
 
-/* Title */
 h1{
   color:#ff5722;
-  font-size:28px;
   margin-bottom:20px;
 }
 
-/* Button */
+/* button */
 button{
   padding:12px 25px;
   font-size:18px;
@@ -48,24 +45,45 @@ button:hover{
   transform:scale(1.1);
 }
 
-/* Message box */
+/* message */
 #message{
   margin-top:20px;
   background:white;
   padding:18px;
   border-radius:12px;
   box-shadow:0 6px 15px rgba(0,0,0,0.2);
-  font-size:18px;
   display:none;
 }
 
-/* Hearts */
+/* teacher image */
+#teacherImg{
+  margin-top:15px;
+  width:100%;
+  border-radius:12px;
+  display:none;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  animation:zoomIn 1s ease;
+}
+
+/* stylish animation */
+@keyframes zoomIn{
+  from{
+    transform:scale(0.5) rotate(-10deg);
+    opacity:0;
+  }
+  to{
+    transform:scale(1) rotate(0);
+    opacity:1;
+  }
+}
+
+/* hearts */
 .heart{
   position:fixed;
   bottom:0;
   color:red;
   font-size:18px;
-  animation: floatUp 4s linear forwards;
+  animation:floatUp 4s linear forwards;
 }
 
 @keyframes floatUp{
@@ -91,9 +109,11 @@ button:hover{
 <button onclick="startAnimation()">Click for Surprise 💖</button>
 
 <div id="message">
-Thank you Miss for your guidance, patience and inspiration.  
-You make learning beautiful for all of us! 💐
+Thank you Miss for your guidance, patience and inspiration. 💐
 </div>
+
+<!-- your generated image -->
+<img id="teacherImg" src="Heeramiss. png">
 
 </div>
 
@@ -101,22 +121,24 @@ You make learning beautiful for all of us! 💐
 
 function startAnimation(){
 
-  document.getElementById("message").style.display="block";
+ document.getElementById("message").style.display="block";
+ document.getElementById("teacherImg").style.display="block";
 
-  setInterval(function(){
+ setInterval(function(){
 
-    let heart=document.createElement("div");
-    heart.className="heart";
-    heart.innerHTML="❤";
-    heart.style.left=Math.random()*100+"vw";
+   let heart=document.createElement("div");
+   heart.className="heart";
+   heart.innerHTML="❤";
+   heart.style.left=Math.random()*100+"vw";
 
-    document.body.appendChild(heart);
+   document.body.appendChild(heart);
 
-    setTimeout(()=>{
-      heart.remove();
-    },4000);
+   setTimeout(()=>{
+     heart.remove();
+   },4000);
 
-  },300);
+ },300);
+
 }
 
 </script>
