@@ -1,103 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Thank You Miss</title>
 
 <style>
 
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:linear-gradient(135deg,#ffecd2,#fcb69f);
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#ffecd2,#fcb69f);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
 }
 
 .container{
-  width:90%;
-  max-width:380px;
+width:90%;
+max-width:400px;
 }
 
 h1{
-  color:#ff5722;
-  margin-bottom:20px;
+color:#ff5722;
+margin-bottom:20px;
 }
 
 /* button */
+
 button{
-  padding:12px 25px;
-  font-size:18px;
-  border:none;
-  border-radius:25px;
-  background:#ff5722;
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:25px;
+background:#ff5722;
+color:white;
+cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-  transform:scale(1.1);
+transform:scale(1.1);
 }
 
 /* message */
+
 #message{
-  margin-top:20px;
-  background:white;
-  padding:18px;
-  border-radius:12px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.2);
-  display:none;
+margin-top:20px;
+background:white;
+padding:18px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+display:none;
 }
 
-/* teacher image */
+/* image */
+
 #teacherImg{
-  margin-top:15px;
-  width:100%;
-  border-radius:12px;
-  display:none;
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
-  animation:zoomIn 1s ease;
+margin-top:20px;
+width:100%;
+border-radius:12px;
+display:none;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+animation:zoomIn 1s ease;
 }
 
-/* stylish animation */
+/* image animation */
+
 @keyframes zoomIn{
-  from{
-    transform:scale(0.5) rotate(-10deg);
-    opacity:0;
-  }
-  to{
-    transform:scale(1) rotate(0);
-    opacity:1;
-  }
+from{
+transform:scale(0.5) rotate(-8deg);
+opacity:0;
+}
+to{
+transform:scale(1) rotate(0);
+opacity:1;
+}
 }
 
 /* hearts */
+
 .heart{
-  position:fixed;
-  bottom:0;
-  color:red;
-  font-size:18px;
-  animation:floatUp 4s linear forwards;
+position:fixed;
+bottom:0;
+color:red;
+font-size:20px;
+animation:floatUp 4s linear forwards;
 }
 
 @keyframes floatUp{
-  from{
-    transform:translateY(0);
-    opacity:1;
-  }
-  to{
-    transform:translateY(-100vh);
-    opacity:0;
-  }
+from{
+transform:translateY(0);
+opacity:1;
+}
+to{
+transform:translateY(-100vh);
+opacity:0;
+}
 }
 
 </style>
+
 </head>
 
 <body>
@@ -109,11 +117,12 @@ button:hover{
 <button onclick="startAnimation()">Click for Surprise 💖</button>
 
 <div id="message">
-Thank you Miss for your guidance, patience and inspiration. 💐
+Thank you Miss for your guidance, patience and inspiration.  
+We are proud to be your students 💐
 </div>
 
-<!-- your generated image -->
-<img id="teacherImg" src="Heeramiss. png">
+<!-- Your teacher image -->
+<img id="teacherImg" src="Heeramiss.png">
 
 </div>
 
@@ -121,23 +130,23 @@ Thank you Miss for your guidance, patience and inspiration. 💐
 
 function startAnimation(){
 
- document.getElementById("message").style.display="block";
- document.getElementById("teacherImg").style.display="block";
+document.getElementById("message").style.display="block";
+document.getElementById("teacherImg").style.display="block";
 
- setInterval(function(){
+setInterval(function(){
 
-   let heart=document.createElement("div");
-   heart.className="heart";
-   heart.innerHTML="❤";
-   heart.style.left=Math.random()*100+"vw";
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
 
-   document.body.appendChild(heart);
+document.body.appendChild(heart);
 
-   setTimeout(()=>{
-     heart.remove();
-   },4000);
+setTimeout(()=>{
+heart.remove();
+},4000);
 
- },300);
+},300);
 
 }
 
