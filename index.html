@@ -1,55 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thank You Miss</title>
 
 <style>
 
 body{
+  margin:0;
   font-family: Arial, sans-serif;
-  text-align:center;
   background: linear-gradient(135deg,#ffecd2,#fcb69f);
-  padding-top:120px;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
   overflow:hidden;
 }
 
-h1{
-  color:#ff5722;
+/* Center container */
+.container{
+  width:90%;
+  max-width:350px;
 }
 
-/* button */
+/* Title */
+h1{
+  color:#ff5722;
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+/* Button */
 button{
-  padding:15px 30px;
-  font-size:20px;
+  padding:12px 25px;
+  font-size:18px;
   border:none;
-  border-radius:30px;
+  border-radius:25px;
   background:#ff5722;
   color:white;
   cursor:pointer;
+  transition:0.3s;
 }
 
-/* white message box */
+button:hover{
+  transform:scale(1.1);
+}
+
+/* Message box */
 #message{
-  margin:30px auto;
-  width:60%;
+  margin-top:20px;
   background:white;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-  font-size:22px;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.2);
+  font-size:18px;
   display:none;
 }
 
-/* hearts */
+/* Hearts */
 .heart{
   position:fixed;
   bottom:0;
   color:red;
-  font-size:20px;
-  animation: float 4s linear forwards;
+  font-size:18px;
+  animation: floatUp 4s linear forwards;
 }
 
-@keyframes float{
+@keyframes floatUp{
   from{
     transform:translateY(0);
     opacity:1;
@@ -65,13 +84,17 @@ button{
 
 <body>
 
+<div class="container">
+
 <h1>🌸 Hi Heera Miss 🌸</h1>
 
-<button onclick="startAnimation()">Click Me 💖</button>
+<button onclick="startAnimation()">Click for Surprise 💖</button>
 
 <div id="message">
-Thank you Miss for your guidance, support and inspiration.  
-You make learning enjoyable for all of us! 💐
+Thank you Miss for your guidance, patience and inspiration.  
+You make learning beautiful for all of us! 💐
+</div>
+
 </div>
 
 <script>
